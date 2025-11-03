@@ -61,16 +61,16 @@ The Jupyter Notebook documents the process of acquiring and analyzing historical
 
 ***
 
-<!--## 🖼️ Project Screenshots
+## 🖼️ Project Screenshots
 
 | Real-Time Dash Application | Historical EDA Notebook (Bollinger Bands) | Return Analysis Summary |
 | :---: | :---: | :---: |
 | 
 
-[Image of real-time crypto chart with candlestick and volume]
+![Image of real-time crypto chart with candlestick and volume](realtime_crypto.png)
  |  | |
-| *Live chart view of BTC-USD data* | *Historical analysis showing Bollinger Bands on XRP/USD* | *Summary of Max/Min Returns for selected tickers* |
+| *Live chart view of BTC-USD data* |*Historical analysis showing Bollinger Bands on XRP/USD* | *Summary of Max/Min Returns for selected tickers* |
 
---- -->
+--- 
 
 *This project was developed for demonstration and educational purposes only and is not financial advice.*
