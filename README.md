@@ -27,7 +27,7 @@ This application provides a dynamic, live-updating view of cryptocurrency tradin
 
 ### How to Run the Live App
 
-1.  **Prerequisites:** You need Python 3.x installed.
+1.  **Prerequisites:** Python 3.x.
 2.  **Install Dependencies:**
     ```bash
     pip install dash pandas plotly ccxt
@@ -49,7 +49,7 @@ The Jupyter Notebook documents the process of acquiring and analyzing historical
 
 ### Key Analysis & Visualizations
 * **Return Analysis:** Calculates and identifies maximum return dates and values, and minimum return dates and values for selected tickers (BNB-USD, BTC-USD, ETH-USD, XRP-USD).
-* **Advanced Charting:** Includes a professional Candlestick chart complete with **Bollinger Bands** (MA20, Upper Band, Lower Band) for technical insights.
+* **Advanced Charting:** Includes a Candlestick chart complete with **Bollinger Bands** (MA20, Upper Band, Lower Band) for technical insights.
 
 ### Tools and Libraries
 
@@ -60,16 +60,46 @@ The Jupyter Notebook documents the process of acquiring and analyzing historical
 | **Visualization** | `Plotly`, `Dash` | Creating interactive, professional charts and the web dashboard. |
 
 ***
+## Limitations
 
-## 🖼️ Project Screenshots
+1.  **Polling vs. True Real-Time Streaming (WebSocket):** The current `realtime_crypto.py` uses periodic API polling every 5 seconds. This is not genuinely "real-time" and introduces inherent latency. A true low-latency solution requires **WebSockets**.
 
-| Real-Time Dash Application | Historical EDA Notebook (Bollinger Bands) | Return Analysis Summary |
-| :---: | :---: | :---: |
-| 
+2.  **Lack of Flexibility:** The dashboard is hardcoded to a single ticker (`XRP/USDT`).
+
+3.  **Limited Time Series Modeling:** The EDA focuses primarily on descriptive statistics and simple moving averages. It lacks deeper time series analysis, such as testing for stationarity, **volatility clustering**, or utilizing models like **ARIMA** or **GARCH** to understand risk.
+
+---
+
+## Future Enhancements
+
+The project can be expanded significantly by focusing on the following areas:
+
+### Live Dashboard Enhancements
+
+1.  **WebSocket Integration:** Refactor the data acquisition layer of `realtime_crypto.py` to use a dedicated WebSocket connection for true, low-latency data streaming.
+
+2.  **Dynamic Ticker and Exchange Selection:** Introduce user controls in the Dash app to allow selection of any available crypto pair and exchange.
+
+3.  **Expanded Technical Indicators:** Integrate a dedicated library (e.g., `TA-Lib`) to allow users to overlay multiple complex indicators (RSI, MACD, Ichimoku Cloud) on the live chart.
+
+### EDA Notebook Enhancements
+
+4.  **Advanced Time Series Analysis:** Implement and document statistical models (e.g., GARCH for conditional volatility) to provide a more rigorous understanding of the assets' risk profiles and future price distribution.
+
+5.  **Feature Engineering and ML Readiness:** Implement feature engineering (e.g., lag features, advanced indicator calculation) within the notebook to prepare the dataset for future integration with machine learning models for prediction.
+
+6.  **Comparative and Portfolio Analysis:** Add a dedicated section for calculating and visualizing the correlation matrix of returns across a basket of top crypto assets.
+
+---
+
+## Project Screenshots
+
+| | | **Real-Time Dash Application**
+
 
 ![Image of real-time crypto chart with candlestick and volume](realtime_crypto.png)
  |  | |
-| *Live chart view of BTC-USD data* |*Historical analysis showing Bollinger Bands on XRP/USD* | *Summary of Max/Min Returns for selected tickers* |
+| *Live chart view of XRP-USDT data* <!--|*Historical analysis showing Bollinger Bands on XRP/USD* | *Summary of Max/Min Returns for selected tickers* |-->
 
 --- 
 
